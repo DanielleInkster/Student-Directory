@@ -26,7 +26,9 @@ end
 
 def print(students)
 students.each_with_index do |student, index|
+  if student[:name][0].chr == 's' || student[:name][0].chr == 'S'
   puts "#{index+1}. #{student[:name].capitalize} (#{student[:cohort]} cohort). They are from #{student[:cob]} and #{student[:height]}."
+  end
 end
 end
 
