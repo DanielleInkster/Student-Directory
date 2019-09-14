@@ -26,19 +26,26 @@ def input_students
   students.sort_by{|student| student[:cohort]}
 end
 
+
 def print_header
   puts "The students of Villains Academy".center(75)
   puts '-------------'.center(75)
 end
 
 def print(students)
+  if students.length > 0
 students.each_with_index do |student, index|
   puts "#{index+1}. #{student[:name].capitalize} (#{student[:cohort].capitalize} cohort).".center(75)
-  end
+end
+else puts "No students".center(75)
+end
 end
 
+
 def print_footer(students)
+  if students.length > 0
 puts "Overall, we have #{students.count} great students".center(75)
+end
 end
 
 students = input_students
