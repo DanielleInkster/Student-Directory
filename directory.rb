@@ -27,9 +27,11 @@ def input_students
 end
 
 
-def print_header
+def print_header(students)
+  if students.length > 0
   puts "The students of Villains Academy".center(75)
   puts '-------------'.center(75)
+end
 end
 
 def print(students)
@@ -49,6 +51,6 @@ end
 end
 
 students = input_students
-print_header
+print_header(students)
 print(students)
 print_footer(students)
