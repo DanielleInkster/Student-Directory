@@ -5,11 +5,11 @@ def input_students
 
   students = []
 
-  name = gets.chomp
+  name = gets.chop
 
   while !name.empty? do
     puts "Please enter the cohort".center(75)
-    cohort = gets.chomp
+    cohort = gets.chop
     if cohort.empty?
       cohort = "TBD"
     end
@@ -21,7 +21,7 @@ def input_students
     puts "Now we have #{students.count} students".center(75)
   end
   puts "Please enter the name of the next student".center(75)
-    name = gets.chomp
+    name = gets.chop
   end
   students.sort_by{|student| student[:cohort]}
 end
@@ -32,7 +32,6 @@ def print_header
 end
 
 def print(students)
-
 students.each_with_index do |student, index|
   puts "#{index+1}. #{student[:name].capitalize} (#{student[:cohort].capitalize} cohort).".center(75)
   end
