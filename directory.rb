@@ -23,7 +23,7 @@ def input_students
   puts "Please enter the name of the next student".center(75)
     name = gets.chomp
   end
-  students
+  students.sort_by{|student| student[:cohort]}
 end
 
 def print_header
@@ -32,6 +32,7 @@ def print_header
 end
 
 def print(students)
+
 students.each_with_index do |student, index|
   puts "#{index+1}. #{student[:name].capitalize} (#{student[:cohort].capitalize} cohort).".center(75)
   end
